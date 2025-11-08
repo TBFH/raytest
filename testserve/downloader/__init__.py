@@ -1,1 +1,1 @@
-from testserve.downloader import download_and_convert_weights
+from .downloader import download_and_convert_weights
