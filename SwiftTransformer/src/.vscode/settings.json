@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "compare": "cpp",
+        "cstdint": "cpp",
+        "type_traits": "cpp",
+        "random": "cpp"
+    }
+}
