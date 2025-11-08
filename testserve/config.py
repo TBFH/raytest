@@ -3,7 +3,7 @@ from typing import Optional, List
 import torch
 from transformers import AutoConfig
 
-from .utils import GB
+from testserve.utils import GB
 
 
 class CacheConfig:

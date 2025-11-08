@@ -1,6 +1,6 @@
 import torch
 
-from .config import ModelConfig, ParallelConfig, CacheConfig
+from testserve.config import ModelConfig, ParallelConfig, CacheConfig
 
 
 def get_model_op(

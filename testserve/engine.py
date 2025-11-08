@@ -8,19 +8,19 @@ import ray
 from ray.util.scheduling_strategies import PlacementGroupSchedulingStrategy
 import torch
 
-from .config import ModelConfig, ParallelConfig, CacheConfig, SchedConfig
-from .logger import init_logger
-from .request import (
+from testserve.config import ModelConfig, ParallelConfig, CacheConfig, SchedConfig
+from testserve.logger import init_logger
+from testserve.request import (
     SamplingParams,
     SamplingParams,
     Request,
     create_request,
 )
-from .worker import ParaWorker
-from .tokenizer import get_tokenizer
-from .scheduler import get_scheduler
-from .utils import Counter
-from .block_manager import BlockManager
+from testserve.worker import ParaWorker
+from testserve.tokenizer import get_tokenizer
+from testserve.scheduler import get_scheduler
+from testserve.utils import Counter
+from testserve.block_manager import BlockManager
 
 # 配置相关环境变量，防止通信问题导致的程序卡死
 import os

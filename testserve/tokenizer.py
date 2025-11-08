@@ -5,7 +5,7 @@ from typing import List, Tuple, Union
 
 from transformers import AutoTokenizer, PreTrainedTokenizer, PreTrainedTokenizerFast
 
-from .logger import init_logger
+from testserve.logger import init_logger
 
 logger = init_logger(__name__)
 

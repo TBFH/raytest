@@ -4,10 +4,10 @@ from typing import List, Union, Optional
 import asyncio
 from tqdm import tqdm
 
-from .config import ModelConfig, ParallelConfig, CacheConfig, SchedConfig
-from .engine import LLMEngine
-from .logger import init_logger
-from .request import Request, SamplingParams
+from testserve.config import ModelConfig, ParallelConfig, CacheConfig, SchedConfig
+from testserve.engine import LLMEngine
+from testserve.logger import init_logger
+from testserve.request import Request, SamplingParams
 
 
 logger = init_logger(__name__)

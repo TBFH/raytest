@@ -2,7 +2,7 @@
 from typing import List, Optional, Union
 import time
 
-from .utils import Counter
+from testserve.utils import Counter
 
 
 class SamplingParams:

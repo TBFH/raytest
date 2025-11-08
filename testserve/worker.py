@@ -7,14 +7,14 @@ import torch
 import torch.distributed
 import ray
 
-from .config import ModelConfig, CacheConfig, ParallelConfig, SchedConfig
-from .request import Request, BatchedRequests
-from .utils import set_random_seed
-from .models import get_model_op
-from .utils import get_gpu_memory, set_random_seed, GB, MB
-from .logger import init_logger
-from .tokenizer import get_tokenizer
-from .downloader import download_and_convert_weights
+from testserve.config import ModelConfig, CacheConfig, ParallelConfig, SchedConfig
+from testserve.request import Request, BatchedRequests
+from testserve.utils import set_random_seed
+from testserve.models import get_model_op
+from testserve.utils import get_gpu_memory, set_random_seed, GB, MB
+from testserve.logger import init_logger
+from testserve.tokenizer import get_tokenizer
+from testserve.downloader import download_and_convert_weights
 
 
 logger = init_logger(__name__)

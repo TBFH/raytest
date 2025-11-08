@@ -13,5 +13,5 @@ if not os.path.exists(LIB_DIR):
 
 torch.ops.load_library(os.path.join(LIB_DIR, "libst_pybinding.so"))
 
-from .llm import OfflineLLM
-from .request import SamplingParams
+from testserve.llm import OfflineLLM
+from testserve.request import SamplingParams

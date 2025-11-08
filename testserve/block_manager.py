@@ -2,9 +2,9 @@ from typing import List, Callable
 from enum import Enum
 from dataclasses import dataclass
 
-from .config import ModelConfig, ParallelConfig, CacheConfig
-from .request import Request, BatchedRequests
-from .logger import init_logger
+from testserve.config import ModelConfig, ParallelConfig, CacheConfig
+from testserve.request import Request, BatchedRequests
+from testserve.logger import init_logger
 
 logger = init_logger(__name__)
 

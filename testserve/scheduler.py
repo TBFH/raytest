@@ -5,11 +5,11 @@ import warnings
 import torch
 import time
 
-from .config import SchedConfig, ParallelConfig
-from .logger import init_logger
-from .request import Request, BatchedRequests
-from .profiling import ProfilingDatabase
-from .block_manager import BlockManager, BlockLocation
+from testserve.config import SchedConfig, ParallelConfig
+from testserve.logger import init_logger
+from testserve.request import Request, BatchedRequests
+from testserve.profiling import ProfilingDatabase
+from testserve.block_manager import BlockManager, BlockLocation
 
 logger = init_logger(__name__)
 

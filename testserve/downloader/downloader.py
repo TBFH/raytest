@@ -8,8 +8,8 @@ import filelock
 import os
 import torch
 
-from ..config import ModelConfig
-from ..logger import init_logger
+from testserve.config import ModelConfig
+from testserve.logger import init_logger
 from huggingface_hub import snapshot_download
 from typing import Optional
 from .converter import convert_weights
