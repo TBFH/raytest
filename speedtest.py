@@ -1,10 +1,9 @@
 import torch
-import os
 
 from testserve.llm import TestOfflineLLM, SamplingParams
 from testserve.csv_appender import append_to_csv, sum_up_lines
 
-model_path = os.path.expanduser('~') + "/models/opt-1.3b"
+model_path = "/mnt/Data/austin/hf_models/opt-1.3b"
 # model_path = "/mnt/Data/austin/hf_models/Llama-2-7b-chat-hf"
 # model_path = "/mnt/Data/austin/hf_models/Meta-Llama-3-8B-Instruct"
 max_input_tokens = 32

@@ -31,12 +31,14 @@ NcclComm stNcclInit(int64_t world_size, int64_t rank, const ncclUniqueId& nccl_i
     nccl_comm.rank = rank;
     nccl_comm.size = world_size;
     nccl_comm.stream = stream;
-    if (world_size == 1 || !real_init) {
-        nccl_comm.comm = nullptr;
-        return nccl_comm;
-    }
-    NCCL_CHECK(ncclCommInitRank(&nccl_comm.comm, nccl_comm.size, nccl_id, nccl_comm.rank));
+    nccl_comm.comm = nullptr;
     return nccl_comm;
+    // if (world_size == 1 || !real_init) {
+    //     nccl_comm.comm = nullptr;
+    //     return nccl_comm;
+    // }
+    // NCCL_CHECK(ncclCommInitRank(&nccl_comm.comm, nccl_comm.size, nccl_id, nccl_comm.rank));
+    // return nccl_comm;
 }
 
 void stNcclDestroy(NcclComm& nccl_comm)
