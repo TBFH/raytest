@@ -19,25 +19,25 @@ from testserve.downloader import download_and_convert_weights
 
 logger = init_logger(__name__)
 
-def gpu_inspect(rank):
-    # total_memory = torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
-    # used_memory = torch.cuda.memory_allocated(0) / (1024 ** 3)
-    # free_memory = total_memory - used_memory
-    # print(f"[{rank}] Total Memory: {total_memory} GB")
-    # print(f"[{rank}] Used Memory: {used_memory} GB")
-    # print(f"[{rank}] Free Memory: {free_memory} GB")
-    import pycuda.driver as cuda
-    cuda.init()
-    device = cuda.Device(0)
-    print("[{}] GPU Device {}: {}".format(rank, 0, device.name()))
-    context = device.make_context()
-    total_memory = device.total_memory() / (1024 ** 3)
-    free_memory = cuda.mem_get_info()[0] / (1024 ** 3)
-    allocated_memory = total_memory - free_memory
-    print("[{}] Total VRAM: {:.2f} GB".format(rank, total_memory))
-    print("[{}] Allocated VRAM: {:.2f} GB".format(rank, allocated_memory))
-    print("[{}] Free VRAM: {:.2f} GB".format(rank, free_memory))
-    context.pop()
+# def gpu_inspect(rank):
+#     # total_memory = torch.cuda.get_device_properties(0).total_memory / (1024 ** 3)
+#     # used_memory = torch.cuda.memory_allocated(0) / (1024 ** 3)
+#     # free_memory = total_memory - used_memory
+#     # print(f"[{rank}] Total Memory: {total_memory} GB")
+#     # print(f"[{rank}] Used Memory: {used_memory} GB")
+#     # print(f"[{rank}] Free Memory: {free_memory} GB")
+#     import pycuda.driver as cuda
+#     cuda.init()
+#     device = cuda.Device(0)
+#     print("[{}] GPU Device {}: {}".format(rank, 0, device.name()))
+#     context = device.make_context()
+#     total_memory = device.total_memory() / (1024 ** 3)
+#     free_memory = cuda.mem_get_info()[0] / (1024 ** 3)
+#     allocated_memory = total_memory - free_memory
+#     print("[{}] Total VRAM: {:.2f} GB".format(rank, total_memory))
+#     print("[{}] Allocated VRAM: {:.2f} GB".format(rank, allocated_memory))
+#     print("[{}] Free VRAM: {:.2f} GB".format(rank, free_memory))
+#     context.pop()
 
 
 # If we call `torch.ops.swapping_ops.swap` in `ParaWorker.swap_blocks()` directly,
@@ -267,7 +267,7 @@ class ParaWorker:
             self.intermed_input = inter_in
             # print(f"pp rank: [{self.parallel_config.pipeline_parallel_rank}] intermed_input is {self.intermed_input}")
 
-        gpu_inspect(self.parallel_config.pipeline_parallel_rank)
+        # gpu_inspect(self.parallel_config.pipeline_parallel_rank)
 
         start = time.time()
         # run forward
