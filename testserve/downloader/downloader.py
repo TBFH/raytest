@@ -22,9 +22,9 @@ logger = init_logger(__name__)
 REPO_ID_SEPARATOR = "--"
 
 # cache - where the converted weights are saved
-# default_cache = os.path.join(os.path.expanduser("~"), ".cache", "fastserve")
-default_cache = os.path.join("/mnt/Data/austin/", ".cache", "fastserve")
-FASTSERVE_CACHE = os.getenv("FASTSERVE_CACHE", default_cache)
+default_cache = os.path.join(os.path.expanduser("~"), ".cache", "testserve")
+# default_cache = os.path.join("/mnt/Data/austin/", ".cache", "fastserve")
+TESTSERVE_CACHE = os.getenv("TESTSERVE_CACHE", default_cache)
 
 # MODEL_REGISTRY - Supported models
 MODEL_REGISTRY = {
@@ -110,7 +110,7 @@ def download_and_convert_weights(model_config: ModelConfig) -> str:
             f"Unknown model {model}, expected one of {MODEL_REGISTRY}"
         
         # if the model weights have already been downloaded and converted before
-        cache_dir = FASTSERVE_CACHE
+        cache_dir = TESTSERVE_CACHE
         storage_folder = os.path.join(cache_dir, repo_folder_name(repo_id=model_name_or_path)) + '/'
         done_file = os.path.join(storage_folder, "done")
         if os.path.exists(done_file):
