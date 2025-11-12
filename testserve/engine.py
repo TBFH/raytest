@@ -118,7 +118,7 @@ class LLMEngine:
         if not ray.is_initialized():
             ray.init(
                 # include_dashboard=False
-                address="ray://219.222.20.79:30872"
+                address="ray://219.222.20.79:32261"
             )
         num_cluster_gpus = ray.cluster_resources().get("GPU", 0)
         if (
